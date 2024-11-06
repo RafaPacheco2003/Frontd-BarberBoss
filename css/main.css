@@ -1,0 +1,352 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Se asigna la fuente Roboto */
+
+}
+
+
+.grid-container {
+    max-width: 980px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: inline;
+}
+
+header {
+
+    background-image: url("../assets/img/fondoHeader.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 665px; /* Ajusta la altura total del header aquí */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    color: white;
+    
+}
+
+nav {
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0; /* Asegura que esté en la parte superior */
+    left: 0; /* Asegura que esté alineado a la izquierda */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+   
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar más profundidad */
+    
+}
+
+ /* Nueva clase para el menú de navegación al hacer scroll */
+ .nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente para mejorar la visibilidad */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+nav .nav-logo img{
+    width: 90px;
+    height: 90px;
+}
+nav .nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .nav-url {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .nav-url ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav .nav-url ul li {
+    display: inline;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-url ul li a {
+    color: rgb(255, 255, 255); /* Color blanco para el enlace sin hover */
+    font-size: 15px; /* Tamaño de fuente */
+}
+
+/* Contenedor del icono (<i>) y el enlace (<a>) */
+nav .nav-url ul li span {
+    color: #ffffff; /* Color inicial del texto e icono */
+    font-size: 15px; /* Tamaño de fuente */
+    margin-left: 10px; /* Espacio a la izquierda */
+    position: relative; /* Necesario para posicionar el pseudo-elemento ::after relativo a este contenedor */
+    overflow: hidden; /* Oculta cualquier elemento o efecto que se desborde */
+    display: inline-flex; /* Alinea el icono y el enlace en una sola línea */
+    align-items: center; /* Centra verticalmente el icono y el enlace */
+    gap: 5px; /* Espacio entre el icono y el enlace */
+}
+
+/* Pseudo-elemento ::after para crear la línea de animación */
+nav .nav-url ul li span::after {
+    content: ""; /* No muestra texto, solo un elemento visual */
+    position: absolute; /* Posiciona el pseudo-elemento relativo al contenedor `span` */
+    bottom: 0; /* Coloca el pseudo-elemento en la parte inferior de `span` */
+    left: 0; /* Inicia desde la parte izquierda */
+    width: 0; /* Ancho inicial de la línea (invisible) */
+    height: 2px; /* Altura de la línea subrayada */
+    background-color: rgb(163, 163, 3); /* Color de la línea */
+    transition: width 0.3s ease; /* Efecto de transición para el ancho de la línea (de 0 a 100%) */
+}
+
+/* Efecto hover en el pseudo-elemento ::after */
+nav .nav-url ul li span:hover::after {
+    width: 100%; /* Al hacer hover, el ancho se extiende a todo el contenedor `span` */
+}
+
+/* Efecto hover en el texto e icono */
+nav .nav-url ul li span:hover {
+    color: rgb(163, 163, 3); /* Cambia el color del texto e icono al color amarillo cuando se hace hover */
+}
+
+
+.header-info-img {
+
+    height: 100%; /* Asegura que no se expanda más allá de header */
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.info-img-container{
+
+    display: grid;
+    grid-column: 2;
+    justify-items: center;
+    height: 450px;
+    margin-top: 50px;
+    
+}
+
+.subLog-img-info {
+    margin-bottom: 20px; /* Espacio entre h1 y el grupo de h3 y p */
+}
+
+.text-group {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 5px;
+    gap: 3px; /* Espacio entre h3 y p */
+}
+
+
+
+
+
+
+.servicos-info-container{
+   background-image: url(/assets/img/fondo2.jpg);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ajusta los valores según sea necesario */
+
+    padding: 0 50px 40px;
+}
+.servicos-info-container h3{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    margin-bottom: 0px;
+
+}
+.parrafo-servicios-info{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+.servicos-info-container .post-service-container {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 300px; /* Define un ancho máximo */
+    margin-bottom: 30px;
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+    text-align: center;
+    border: 10px solid #ffffff;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.servicos-info-container .post-service-container:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Mejora el efecto de sombra */
+}
+
+
+.post-service-container img {
+    width: 100%; /* Asegura que la imagen se adapte al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+    
+}
+
+.post-service-container .titulo-service{
+    font-weight: bold;
+}
+
+.servicios-btn-ver-mas{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.servicios-btn-ver-mas a{
+    text-align: center;
+    padding: 10px 15px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+
+}
+
+.servicios-btn-ver-mas a:hover{
+   background-color: black;
+   color: rgb(163, 163, 3);
+}
+.border-service{
+    border-bottom: 1px solid black;
+    margin-top: 30px;
+}
+
+
+
+
+
+.productos {
+    position: relative;
+    padding: 0 50px 40px;
+    background-image: url('/assets/img/Fondo3.jpeg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+    background-position: center; /* Centra la imagen */
+}
+
+.productos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.653); /* Capa semi-transparente encima de la imagen */
+    z-index: 1; /* Asegura que esta capa esté encima de la imagen */
+}
+
+.productos h3 {
+    color: rgb(255, 255, 255);
+    padding-top: 50px;
+    text-align: center;
+    margin-top: 0;
+    font-size: 50px;
+    /*padding-bottom: 5px;*/
+    /*border-bottom: 5px solid rgb(255, 255, 255);*/
+    width: 30%; /* Ajusta el ancho del borde */
+    margin: 0 auto; /* Centra el h3 */
+    position: relative;
+    z-index: 2; /* Mantiene el texto sobre la capa de color */
+}
+
+.productos p {
+    color: #cacaca;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Permite centrar el fondo con el texto */
+    position: relative;
+    z-index: 2; /* Asegúrate de que el texto esté encima de la capa semi-transparente */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sucursales-info{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 50px;
+
+}
+
+.sucursales-info .sucursal-img-container{
+    grid-column: 1;
+}
+
+.sucursal-img-container img{
+    width: 95%;
+}
+.sucursales-info .sucursal-text-container{
+    grid-column: 2;
+}
+.sucursales-info .sucursal-text-container .text-sucursales{
+  
+    margin-top: 10px;
+    color: rgb(163, 163, 3);
+    font-weight: 800;
+    text-align: center;
+    font-size: 26px;
+    z-index: 3; /* Asegúrate de que el texto esté encima */
+    position: relative; /* Necesario para que z-index funcione */
+}
+
+.sucursales-info .sucursal-text-container i{
+  
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+    z-index: 3; /* Asegúrate de que el texto esté encima */
+    position: relative; /* Necesario para que z-index funcione */
+}
+
+.sucursales-info .text-sucursal-info{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
